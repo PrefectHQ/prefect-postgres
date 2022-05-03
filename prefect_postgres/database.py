@@ -1,4 +1,4 @@
-"""Module for querying against Snowflake database."""
+"""Module for querying against Postgres database."""
 
 from functools import partial
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -17,7 +17,7 @@ async def postgres_query(
     database: Optional[str] = None,
 ) -> List[Tuple[Any]]:
     """
-    Executes a query against a Snowflake database.
+    Executes a query against a Postgres database.
 
     Args:
         query: The query to execute against the database.
@@ -30,7 +30,7 @@ async def postgres_query(
         The output of `response.fetchall()`.
 
     Examples:
-        Query Snowflake table with the ID value parameterized.
+        Query Postgres table with the ID value parameterized.
         ```python
         from prefect import flow
         from prefect_postgres import PostgresCredentials
