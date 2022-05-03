@@ -35,7 +35,7 @@ class PostgresCredentials:
         Args:
             database: The name of the database to use; overrides
                 the class definition if provided.
-    
+
         Returns:
             The authenticated Postgres connection.
 
@@ -60,8 +60,7 @@ class PostgresCredentials:
         database = self.database or database
         if database is None:
             raise ValueError(
-                f"The database must be set in either "
-                f"PostgresCredentials or the task"
+                "The database must be set in either " "PostgresCredentials or the task"
             )
 
         return psycopg2.connect(
